@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="zeptoISAll/zepto.js"></script>
+<script src="zeptoISAll/iscroll.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;font-family:Microsoft yahei;}
+body{width:100%;height:100%;}
+#wrap{
+	width:100%;height:100%;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	position:absolute;
+	
+	}
+	/*垂直居中 box-align
+	box-align表示父容器里面子容器的垂直对齐方式，可选参数如下所示：
+	start | end | center | baseline | stretch*/
+#wrap>header{width:100%;height:60px;background:SkyBlue;}
+#con{width:100%;-webkit-box-flex:1;position:relative;}
+#wrap>footer{width:100%;height:60px;background:SkyBlue;}
+/*-------------------------------------------------------------*/
+#con>div{
+	width:100%;background:grey;
+	position:absolute;
+	position:absolute;top:0;bottom:100px;
+	-webkit-transition:-webkit-transform 500ms ease;
+	-webkit-transform:scaleX(0);
+	
+	
+	}
+#d1{
+	
+	}
+#con>div:nth-child(1){-webkit-transform:scaleX(1);}
+/*-------------------------------------------------------------*/
+#wrap>footer>ul{width:100%;height:60px;
+display:-webkit-box;list-style:none;line-height:60px;
+}
+#wrap>footer>ul>li{
+	-webkit-box-flex:1;
+	text-align:center;
+	}
+
+/*-------------------------------------------------------------*/
+</style>
+<script>
+$(document).ready(function(e) {
+    readyfun();
+});
+function readyfun(){
+	
+	$("footer li").click(clickfun);
+	
+	new iScroll("d1");
+	
+	}
+function clickfun(){
+	var ind=$(this).index();
+	changePage(ind);
+	}
+//页面切换模块
+function changePage(abc){
+	//-webkit-transform:translateX(100%);
+	//全部离开
+	$("#con>div").css("-webkit-transform","scaleX(0)");
+	//当前显示页面
+	$("#con>div").eq(abc).css("-webkit-transform","scaleX(1)");
+	}
+	
+</script>
+</head>
+
+<body>
+<section id="wrap">
+
+	<header></header>
+    <section id="con">
+    	<div id="d1">
+        <div id="scr">
+        	  <ul>
+                	<li>新闻内容1</li>
+                    <li>新闻内容2</li>
+                    <li>新闻内容3</li>
+                    <li>新闻内容4</li>
+                    <li>新闻内容5</li>
+                    <li>新闻内容6</li>
+                    <li>新闻内容7</li>
+                    <li>新闻内容8</li>
+                    <li>新闻内容9</li>
+                	<li>新闻内容1</li>
+                    <li>新闻内容2</li>
+                    <li>新闻内容3</li>
+                    <li>新闻内容4</li>
+                    <li>新闻内容5</li>
+                    <li>新闻内容6</li>
+                    <li>新闻内容7</li>
+                    <li>新闻内容8</li>
+                    <li>新闻内容9</li>
+                	<li>新闻内容1</li>
+                    <li>新闻内容2</li>
+                    <li>新闻内容3</li>
+                    <li>新闻内容4</li>
+                    <li>新闻内容5</li>
+                    <li>新闻内容6</li>
+                    <li>新闻内容7</li>
+                    <li>新闻内容8</li>
+                    <li>新闻内容9</li>
+                </ul>
+        </div></div>
+        <div><img src="img/17.jpg"></div>
+        <div><img src="img/18.jpg"></div>
+        <div><img src="img/19.jpg"></div>
+    </section>
+    <footer>
+    	<ul>
+        	<li>首页</li><li>首页</li><li>首页</li><li>首页</li>
+        </ul>
+    </footer>
+
+</section>
+</body>
+</html>
